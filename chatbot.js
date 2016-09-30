@@ -32,16 +32,16 @@ var monthConversion = {
 
 function askQuestion() {
   var input = document.getElementById("input").value;
-  var giveresponse = responses[input]
-  document.getElementById("chat-area").innerHTML += input + ": " + giveresponse + " " + "<br>";
+  var giveresponse = responses[input];
+
+if(responses[input] == undefined) {
+  var rand = Math.floor((Math.random() * fallBack.length));
+  var fallBackAnswer = fallBack[rand];
+  document.getElementById("chat-area").innerHTML += input + ": " + fallBackAnswer + " " + "<br>";
 }
-
-var fallBackResponse = ["Wǒ méiyǒu jiǎng yīngyǔ or me no speak the english".];
-
-if(responses[userInput] == undefined) {
-  var rand = Math.floor((Math.random() * myArray.length));
-  var fallBackAnswer = fallBackResponse[random];
-  document.getElementById("chat-area").innerHTML += input + ": " + fallBackResponse + " ";
+else {
+  document.getElementById("chat-area").innerHTML += input + ": " + giveresponse + " " + "<br>";
+  }
 }
 
 var responses = {
@@ -49,6 +49,7 @@ var responses = {
   "what is your age" : "I am eternal.",
   "what is your name" : "Stinky Joe",
   "what is the date" : "Today is " + weekDayConversion[weekday],
-  "what month are we in" : "The month is " + monthConversion[month],
-  "what is the time" : "The time is " + timeConvertion[time]
+  "what month are we in" : "The month is " + monthConversion[month]
 }
+
+var fallBack = ["Wǒ méiyǒu jiǎng yīngyǔ or me no speak the english."];
