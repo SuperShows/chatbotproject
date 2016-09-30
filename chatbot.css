@@ -94,3 +94,21 @@ h4 {
     font-size: 16px;
     font-weight: bold;
 }
+
+body {
+  background-image: url(https://i.ytimg.com/vi/wpiyQ4YdzRA/maxresdefault.jpg);
+}
+
+h1 {
+  color: white;
+  font-family: 'Yatra One', cursive;
+}
+
+div {
+  color: white;
+  font-family: 'Yatra One', cursive;
+}
+
+p {
+  font-family: 'Yatra One', cursive;
+}
