@@ -1,3 +1,11 @@
+function enter(event) {
+  var x = event.keyCode;
+  console.log(x);
+  if (x  == 13) {
+    askQuestion();
+  }
+}
+
 var date = new Date();
 var weekday = date.getUTCDay();
 var month = date.getMonth();
@@ -32,6 +40,7 @@ var monthConversion = {
 
 function askQuestion() {
   var input = document.getElementById("input").value;
+  input = input.toLowerCase();
   var giveresponse = responses[input];
 
 if(responses[input] == undefined) {
@@ -49,7 +58,12 @@ var responses = {
   "what is your age" : "I am eternal.",
   "what is your name" : "Stinky Joe",
   "what is the date" : "Today is " + weekDayConversion[weekday],
-  "what month are we in" : "The month is " + monthConversion[month]
+  "what month are we in" : "The month is " + monthConversion[month],
+  "do you have any siblings" : "The trash",
+  "what is your favorite food" : "Trash",
+  "where are you from" : "The dumbster",
+  "where do you live" : "Everywhere",
+  "who created you" :  "Jesus"
 }
 
 var fallBack = ["Wǒ méiyǒu jiǎng yīngyǔ or me no speak the english."];
